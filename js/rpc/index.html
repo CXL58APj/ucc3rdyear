@@ -1,0 +1,52 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+
+</body>
+  <script>
+  
+let loop = 0; 
+while (loop < 1) {
+	let userChoice = prompt("Do you choose rock, paper or scissors? ");
+	let computerChoice = Math.random();
+	if (userChoice == "scissors" || userChoice == "paper" || userChoice == "rock"){
+		if (computerChoice < 0.34 ) {
+    			computerChoice = "rock";
+            if (userChoice == "scissors") {
+                userChoice = "You Lose!"
+            }else if (userChoice == "paper") {
+                userChoice = "You Won!"
+            }else{
+                userChoice ="Draw!"
+            }
+		} else if(computerChoice <= 0.67) {
+                computerChoice="paper"
+            if (userChoice == "rock") {
+                userChoice = "You Lose!"
+            }else if (userChoice == "scissors") {
+                userChoice = "You Won!"
+            }else{
+                userChoice ="Draw!"
+            }
+		} else {
+    			computerChoice = "scissors";
+				if (userChoice == "paper") {
+                userChoice = "You Lose!"
+            }else if (userChoice == "rock") {
+                userChoice = "You Won!"
+            }else{
+                userChoice ="Draw!"
+            }		
+	}
+
+  		alert ("Computer Choice: " + computerChoice + "\n\n" + userChoice);
+	}else{
+		continue;
+	}
+}
+  </script>
+</html>
