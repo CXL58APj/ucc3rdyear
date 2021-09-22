@@ -1,0 +1,112 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Function and Event Activity</title>
+  <style>
+    label {
+        float: left;
+        width: 10em;
+        margin-right: .5em;
+        text-align: right;
+        line-height: 22px;
+      }
+      #first_number,#second_number{
+          margin-top: 2px;
+          text-align: center;
+      }
+      button{
+          text-align: center;
+          padding: 15px 20px 15px 20px;
+      }
+      th {
+          text-align: center;
+      }
+  </style>
+</head>
+<body>
+    <label id="label" for="first_number">First Number:</label>
+    <input id ="first_number" class="firstInput" type="text">
+    <br/>
+    <label id="label" for="second_number">Second Number:</label>
+    <input id ="second_number" class="secondInput" type="text">
+    <br/>
+    <table width ="70%">
+        <tr>
+            <th><button class="add">+</button></th>
+            <th><button class="subtract">-</button></th>
+            <th><button class="divide">/</button></th>
+            <th><button class="multiply">*</button></th>
+            
+        </tr>
+    </table> 
+  <p></p>
+<script>
+    const firstNum = document.querySelector('.firstInput');
+    const secondNum = document.querySelector('.secondInput');
+    const para = document.querySelector('p');
+    const btnAdd = document.querySelector('.add');
+    const btnSub=document.querySelector('.subtract');
+    const btnDiv=document.querySelector('.divide');
+    const btnMulti=document.querySelector('.multiply');
+  
+    function addition(answer, firstNum, secondNum) {
+        return answer = Number(firstNum) + Number(secondNum);
+    }
+    function subtraction(answer, firstNum, secondNum) {
+      return answer = Number(firstNum) - Number(secondNum);
+    }
+
+    function division(answer, firstNum, secondNum) {
+      return answer = Number(firstNum) / Number(secondNum);
+      }
+    
+    function multiplication(answer, firstNum, secondNum) {
+      return answer = Number(firstNum) * Number(secondNum);
+      }
+
+    
+
+    btnAdd.onclick = function() {
+        const num1 = firstNum.value;
+        const num2 = secondNum.value;
+        var answer;
+      if(isNaN(num1) || isNaN(num2)) {
+        para.textContent = 'You need to enter a number!';
+      } else {
+        para.textContent = 'The sum of ' +num1 + ' + ' + num2+' is ' + addition(answer, num1, num2);
+      }
+    }
+    
+    btnSub.onclick = function() {
+        const num1 = firstNum.value;
+        const num2 = secondNum.value;
+        var answer;
+      if(isNaN(num1) || isNaN(num2)) {
+        para.textContent = 'You need to enter a number!';
+      } else {
+        para.textContent = 'The difference of ' +num1 + ' - ' + num2+' is ' + subtraction(answer, num1, num2);
+      }
+    }
+    btnDiv.onclick = function() {
+        const num1 = firstNum.value;
+        const num2 = secondNum.value;
+        var answer;
+      if(isNaN(num1) || isNaN(num2)) {
+        para.textContent = 'You need to enter a number!';
+      } else {
+        para.textContent = 'The quotient of ' +num1 + ' / ' + num2+' is ' + division(answer, num1, num2);
+      }
+    }
+    btnMulti.onclick = function() {
+        const num1 = firstNum.value;
+        const num2 = secondNum.value;
+        var answer;
+      if(isNaN(num1) || isNaN(num2)) {
+        para.textContent = 'You need to enter a number!';
+      } else {
+        para.textContent = 'The product of ' +num1 + ' * ' + num2+' is ' + multiplication(answer, num1, num2);
+      }
+    }
+  </script>
+</body>
+</html>
